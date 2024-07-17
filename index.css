@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*================ VARIABLES CSS ==========*/
+
+:root {
+  --header-height: 3rem;
+
+  /*======= Colors =======*/
+  --hue-color: 240;
+
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.5rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  --mb-1: 1rem;
+  --mb-2: 2rem;
+  --mb-3: 3rem;
+
+  /* Dark Theme Variables */
+  --dark-first-color: hsl(var(--hue-color), 69%, 61%);
+  --dark-first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --dark-title-color: hsl(var(--hue-color), 8%, 95%);
+  --dark-text-color: hsl(var(--hue-color), 8%, 75%);
+  --dark-input-color: hsl(var(--hue-color), 29%, 16%);
+  --dark-body-color: hsl(var(--hue-color), 28%, 12%);
+  --dark-container-color: hsl(var(--hue-color), 29%, 16%);
+}
+
+/*================ Base ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/*================== Team Section ==================*/
+.team {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.team h1 {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-2);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  position: relative;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.team h1::after {
+  content: '';
+  width: 50px;
+  height: 4px;
+  background: var(--first-color);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.members {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.member {
+  background: var(--container-color);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.member img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--mb-1);
+}
+
+.member h2 {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.member p {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-1);
+  font-weight: 400;
+}
+
+.member .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.member .social-links a {
+  text-decoration: none;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member .social-links a i {
+  margin-right: 5px;
+}
+
+.member .social-links a:hover {
+  background-color: var(--first-color-alt);
+}
+
+.member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.website-link {
+  margin-top: 10px;
+}
+
+/*================== Contact Section ==================*/
+.contact {
+  margin-top: var(--mb-3);
+  padding: 30px;
+  background-color: var(--container-color);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact h2 {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-1);
+  font-weight: var(--font-semi-bold);
+}
+
+.contact p {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contact a {
+  color: var(--first-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: var(--first-color-alt);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mb-1);
+}
+
+.contact-form label {
+  font-size: var(--normal-font-size);
+  color: var(--title-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--input-color);
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--first-color);
+  background-color: var(--body-color);
+}
+
+.contact-form button {
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+  border-color: red;
+}
+
+.contact-form input:valid,
+.contact-form textarea:valid {
+  border-color: green;
+}
+
+/*================== Media Queries ==================*/
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px;
+  }
+
+  .contact h2 {
+    font-size: 1.5em;
+  }
+
+  .contact p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .team h1 {
+    font-size: 2em;
+  }
+
+  .member {
+    padding: 20px;
+  }
+
+  .member h2 {
+    font-size: 1.2em;
+  }
+
+  .member p {
+    font-size: 0.9em;
+  }
+}
+
+/*================== Dark Theme ==================*/
+body.dark-theme {
+  --first-color: var(--dark-first-color);
+  --first-color-alt: var(--dark-first-color-alt);
+  --title-color: var(--dark-title-color);
+  --text-color: var(--dark-text-color);
+  --input-color: var(--dark-input-color);
+  --body-color: var(--dark-body-color);
+  --container-color: var(--dark-container-color);
+}
+
+/*================== Keyframes for Animations ==================*/
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*================== Tooltip Styles ==================*/
+.tooltip {
+  position: absolute;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: var(--small-font-size);
+  white-space: nowrap;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 125%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.social-links a:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
