@@ -6,7 +6,7 @@
   --header-height: 3rem;
 
   /*======= Colors =======*/
-  --hue-color: 240;
+  --hue-color: 220; /* Change this to adjust the color scheme */
 
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
